@@ -20,6 +20,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[HomeController::class,'index']);
 
 Route::post('/create',[HotelController::class,'create']);
+Route::post('/search',[HotelController::class,'search']);
+
 Route::get('/hotel{id}',[HotelController::class,'hotel']);
 
 

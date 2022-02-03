@@ -66,4 +66,9 @@ class HotelController extends Controller
         return view('pages.hotel',['hotel'=>$hotels,'images'=>$images]);
     }
 
+    function search(Request $request){
+        $hotels = Hotel::where('name','LIKE',"%{$request['search']}%")->orWhere('city','LIKE',"%{$request['search']}%")->get();
+        return view('pages.index',['hotels'=>$hotels]);
+    }
+
 }

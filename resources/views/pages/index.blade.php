@@ -6,18 +6,19 @@
 
             <div class="card-body ">
                <p class="text-dark" style="font-weight: 600;">Search and sort hotels</p>
-             <form class="d-flex flex-row justify-content-around">
-                   <input type="search" class="form-control  px-2" style="margin-right:20px ;" name="search" placeholder="Search place">
+          <form action="/search" method="post">
+            @csrf
+               <div class="d-flex flex-row justify-content-around">
+                   <input type="search" name="search" class="form-control  px-2"
+                   style="margin-right:20px ;" name="search"
+                    placeholder="Search place or hotel">
                    <div class=""  style="margin-right:20px ;">
 
-                   <select class="form-control " name="type">
-                       <option>Luxury</option>
-                       <option>Affordable</option>
-                       <option>Near me</option>
-                   </select>
+
                    </div>
                    <input type="submit" class="btn btn-danger" value="Search">
-               </form>
+               </div>
+                </form>
             </div>
         </div>
     </div>
