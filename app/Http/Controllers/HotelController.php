@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Hotel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Illuminate\Support\Arr;
 
 class HotelController extends Controller
@@ -36,7 +37,7 @@ class HotelController extends Controller
 
             foreach($request->file('others') as $file)
             {
-                $name = time().'.'.$file->extension();
+                $name = Str::random(5).'.'.$file->extension();
                 $file->move(public_path().'/hotels/', $name);
                 $others[] = $name;
             }
@@ -45,7 +46,7 @@ class HotelController extends Controller
 
          if($request->hasfile('main'))
          {
-                $name = time().'.'.$request->file('main')->extension();
+                $name = Str::random(5).'.'.$request->file('main')->extension();
                 $request->file('main')->move(public_path().'/hotels/', $name);
                 $main = $name;
          }
