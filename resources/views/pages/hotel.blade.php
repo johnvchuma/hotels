@@ -51,7 +51,7 @@
                             <img src="hotels/{{$images[0]}}" class="w-100 "  alt="First slide">
                         </div>
                         @foreach ($images as $image)
-                        <div class="carousel-item active">
+                        <div class="carousel-item ">
                             <img src="hotels/{{$image}}" class="w-100 "  alt="First slide">
                         </div>
                         @endforeach
